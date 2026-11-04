@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="هاب جزوه‌های فارسی مهندسی کامپیوتر: جبر خطی، اتوماتا و …">
+<meta name="theme-color" content="#1d4e89">
+<title>جزوه‌های من</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap">
+<style>
+:root {
+  --bg: #f4f6f9;
+  --surface: #ffffff;
+  --ink: #17202c;
+  --muted: #5e6a78;
+  --line: #dfe4eb;
+  --accent: #d9711a;
+  --brand: #1d4e89;
+  --brand-ink: #ffffff;
+  --chip: #edf2f8;
+  --shadow: 0 1px 2px rgb(16 32 56 / .06), 0 10px 30px rgb(16 32 56 / .08);
+  --font: "Vazirmatn", "Tahoma", "Segoe UI", system-ui, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0c121a; --surface: #131c28; --ink: #e6ebf2; --muted: #9caabb; --line: #243244;
+    --accent: #f0a052; --brand: #7fb0ea; --brand-ink: #0c121a; --chip: #1a2636;
+    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 30px rgb(0 0 0 / .35);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0c121a; --surface: #131c28; --ink: #e6ebf2; --muted: #9caabb; --line: #243244;
+  --accent: #f0a052; --brand: #7fb0ea; --brand-ink: #0c121a; --chip: #1a2636;
+  --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 10px 30px rgb(0 0 0 / .35);
+  color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); }
+.page {
+  font-family: var(--font); font-size: 1rem; line-height: 1.85; color: var(--ink);
+  max-width: 72rem; margin-inline: auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: clamp(1.5rem, 5vw, 3.5rem) 4rem;
+}
+.page a { color: inherit; }
+.page :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+[lang="en"] { unicode-bidi: isolate; }
+
+.top { display: grid; gap: 1.2rem; margin-bottom: 2.4rem; }
+.who { display: flex; align-items: center; gap: .8rem; }
+.mono-mark {
+  width: 3rem; height: 3rem; border-radius: .9rem; display: grid; place-items: center;
+  background: var(--brand); color: var(--brand-ink); font-weight: 900; font-size: 1.3rem;
+}
+.handle { font-family: var(--mono); font-size: .92rem; color: var(--muted); direction: ltr; }
+.handle a { text-decoration: none; }
+.handle a:hover { color: var(--brand); }
+h1 { margin: 0; font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; line-height: 1.25; text-wrap: balance; }
+.lede { margin: 0; color: var(--muted); max-width: 40rem; font-size: 1.05rem; }
+.count {
+  justify-self: start; display: inline-flex; align-items: center; gap: .5rem;
+  padding: .2rem .8rem; border-radius: 999px; background: var(--chip); font-size: .88rem; color: var(--muted);
+}
+.count b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+.grid {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 1.4rem;
+}
+.card {
+  position: relative; display: grid; grid-template-rows: auto 1fr; overflow: hidden;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 1.1rem;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover { box-shadow: var(--shadow); border-color: color-mix(in srgb, var(--brand) 45%, var(--line)); }
+@media (prefers-reduced-motion: no-preference) { .card:hover { transform: translateY(-3px); } }
+.shot { margin: 0; aspect-ratio: 16 / 10; max-width: 100%; background: var(--chip); border-bottom: 1px solid var(--line); overflow: hidden; }
+.shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.info { display: grid; grid-template-rows: auto auto 1fr auto; gap: .55rem; padding: 1.1rem 1.25rem 1.25rem; min-width: 0; }
+.info h2 { margin: 0; font-size: 1.2rem; font-weight: 800; line-height: 1.55; }
+.info h2 a { text-decoration: none; }
+.info h2 a::after { content: ""; position: absolute; inset: 0; z-index: 0; }
+.info p { margin: 0; color: var(--muted); font-size: .95rem; }
+.tags { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .4rem; align-content: start; }
+.tags li { font-size: .78rem; padding: .05rem .6rem; border-radius: 999px; background: var(--chip); color: var(--muted); }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; position: relative; z-index: 1; }
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .95rem; border-radius: .7rem;
+  font-weight: 700; font-size: .9rem; text-decoration: none; line-height: 1.6;
+}
+.btn-main { background: var(--accent); color: #fff !important; }
+.btn-main:hover { filter: brightness(1.07); }
+.btn-sub { border: 1px solid var(--line); color: var(--ink); }
+.btn-sub:hover { border-color: var(--brand); color: var(--brand); }
+.btn svg { width: 1rem; height: 1rem; }
+
+@media (min-width: 760px) {
+  .grid:has(> .card:only-child) { grid-template-columns: minmax(0, 1fr); }
+  .card:only-child { grid-template-rows: none; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); }
+  .card:only-child .shot { aspect-ratio: auto; min-height: 100%; border-bottom: 0; border-inline-start: 1px solid var(--line); order: 2; }
+  .card:only-child .info { padding: 2rem 2rem 2rem; align-content: center; grid-template-rows: none; }
+  .card:only-child .info h2 { font-size: 1.6rem; }
+  .card:only-child .info p { font-size: 1.02rem; }
+}
+.foot { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="page" dir="rtl" lang="fa">
+  <header class="top">
+    <div class="who">
+      <span class="mono-mark" aria-hidden="true">R</span>
+      <span class="handle"><a href="https://github.com/radanmohseni86-ctrl" target="_blank" rel="noopener">github.com/radanmohseni86-ctrl</a></span>
+    </div>
+    <h1>جزوه‌های من</h1>
+    <p class="lede">جزوه‌های کامل و فارسی درس‌های دانشکده‌ی مهندسی کامپیوتر شریف؛ هر کدام نسخه‌ی وب و PDF دارد. روی هر کارت بزنید تا جزوه باز شود.</p>
+    <span class="count" id="count"></span>
+  </header>
+
+  <ol class="grid" id="grid"></ol>
+
+  <p class="foot">ساخته‌شده با <span lang="en">GitHub Pages</span>.</p>
+</div>
+
+<script type="application/json" id="projects">
+[
+  {
+    "title": "جزوه‌ی جبر خطی",
+    "description": "جبر خطی (CE282): از دستگاه معادلات خطی تا فضای برداری، رتبه، ضرب داخلی و تعامد، با اثبات‌ها، مثال‌های حل‌شده و تمرین.",
+    "url": "https://radanmohseni86-ctrl.github.io/Linear-algebra/",
+    "repo": "https://github.com/radanmohseni86-ctrl/Linear-algebra",
+    "image": "thumbs/linear-algebra.webp",
+    "tags": [
+      "جبر خطی",
+      "۱۰ فصل",
+      "PDF"
+    ]
+  },
+  {
+    "title": "جزوه‌ی اتوماتا",
+    "description": "نظریه‌ی زبان‌ها و ماشین‌ها: از DFA و گرامر تا ماشین تورینگ، تصمیم‌ناپذیری و NP-تمامیت، با اثبات‌ها و نمودار ماشین‌ها.",
+    "url": "https://radanmohseni86-ctrl.github.io/Automata/",
+    "repo": "https://github.com/radanmohseni86-ctrl/Automata",
+    "image": "thumbs/automata.webp",
+    "tags": [
+      "اتوماتا",
+      "۲۴ فصل",
+      "PDF"
+    ]
+  }
+]
+</script>
+<script>
+(function () {
+  const data = JSON.parse(document.getElementById('projects').textContent);
+  const fa = function (n) { return String(n).replace(/\d/g, function (d) { return '۰۱۲۳۴۵۶۷۸۹'[d]; }); };
+  const esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  const ext = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5H5V6h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const code = '<svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  document.getElementById('count').innerHTML = '<b>' + fa(data.length) + '</b> جزوه';
+  document.getElementById('grid').innerHTML = data.map(function (p) {
+    const tags = (p.tags || []).map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('');
+    return '<li class="card">' +
+      '<figure class="shot">' + (p.image ? '<img src="' + esc(p.image) + '" alt="تصویر صفحه‌ی ' + esc(p.title) + '" loading="lazy" decoding="async">' : '') + '</figure>' +
+      '<div class="info"><h2><a href="' + esc(p.url) + '" target="_blank" rel="noopener">' + esc(p.title) + '</a></h2>' +
+      '<p>' + esc(p.description) + '</p><ul class="tags">' + tags + '</ul>' +
+      '<div class="actions"><a class="btn btn-main" href="' + esc(p.url) + '" target="_blank" rel="noopener">مشاهده‌ی سایت ' + ext + '</a>' +
+      (p.repo ? '<a class="btn btn-sub" href="' + esc(p.repo) + '" target="_blank" rel="noopener">کد ' + code + '</a>' : '') +
+      '</div></div></li>';
+  }).join('');
+})();
+</script>
+
+</body>
+</html>
